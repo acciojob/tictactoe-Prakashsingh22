@@ -46,6 +46,6 @@ body {
 
 /* Highlight winning cells */
 .winner {
-  background-color: #90ee90 !important;  /* light green */
+  background-color: purple !important;  /* light green */
   border-color: #2e8b57;
 }
