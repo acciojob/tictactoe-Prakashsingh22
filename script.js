@@ -1,5 +1,5 @@
-const playerInputDiv = document.querySelector(".player-input");
-const gameDiv = document.querySelector(".game");
+const playerInput = document.getElementById("player-input");
+const game = document.getElementById("game");
 const submitBtn = document.getElementById("submit");
 const messageDiv = document.querySelector(".message");
 const cells = document.querySelectorAll(".cell");
@@ -22,19 +22,17 @@ const winningCombos = [
   [2, 4, 6],
 ];
 
-// When players click “Start Game”
 submitBtn.addEventListener("click", () => {
   player1 = document.getElementById("player-1").value || "Player 1";
   player2 = document.getElementById("player-2").value || "Player 2";
   currentPlayer = player1;
 
-  playerInputDiv.style.display = "none";
-  gameDiv.style.display = "block";
+  playerInput.classList.add("hidden");
+  game.classList.remove("hidden");
 
   messageDiv.textContent = `${currentPlayer}, you're up!`;
 });
 
-// Handle cell clicks
 cells.forEach((cell, index) => {
   cell.addEventListener("click", () => {
     if (gameOver || board[index] !== "") return;
@@ -54,7 +52,7 @@ cells.forEach((cell, index) => {
       return;
     }
 
-    // Switch turns
+    // Switch player
     if (currentSymbol === "X") {
       currentSymbol = "O";
       currentPlayer = player2;
@@ -67,7 +65,6 @@ cells.forEach((cell, index) => {
   });
 });
 
-// Check for winner
 function checkWinner() {
   for (let combo of winningCombos) {
     const [a, b, c] = combo;
@@ -79,7 +76,6 @@ function checkWinner() {
   return false;
 }
 
-// Highlight winning cells
 function highlightWinningCells(combo) {
   combo.forEach(index => {
     cells[index].classList.add("winner");
