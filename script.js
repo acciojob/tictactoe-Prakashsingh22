@@ -43,7 +43,7 @@ cells.forEach((cell, index) => {
     cell.textContent = currentSymbol;
 
     if (checkWinner()) {
-      messageDiv.textContent = `${currentPlayer}, congratulations you won! 🎉`;
+      messageDiv.textContent = `${currentPlayer}, congratulations you won!`;
       gameOver = true;
       return;
     }
