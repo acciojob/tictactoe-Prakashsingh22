@@ -18,7 +18,7 @@ body {
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  grid-gap: px;
+  grid-gap: 1px solid black;
   margin: 20px auto;
 }
 
@@ -35,9 +35,6 @@ body {
   transition: 0.3s;
 }
 
-.cell:hover {
-  background-color: #f1f1f1;
-}
 
 .message {
   font-size: 1.2rem;
@@ -47,5 +44,5 @@ body {
 /* Highlight winning cells */
 .winner {
   background-color: purple !important;  /* light green */
-  border-color: #2e8b57;
+  border-color:black;
 }
