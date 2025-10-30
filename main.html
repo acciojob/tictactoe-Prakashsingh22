@@ -8,21 +8,21 @@
 </head>
 <body>
   <div class="container">
-    <!-- Player Input Form -->
-    <div id="player-input">
-      <h2><b>TIC TAC TOE</b></h2>
-      Player 1 <input type="text" id="player-1" placeholder="Enter Name"><br><br>
-      Player 2 <input type="text" id="player-2" placeholder="Enter Name"><br>
-		<br>
+    <!-- Player name input screen -->
+    <div class="player-input">
+      <h1>Tic Tac Toe</h1>
+      Player 1 <input type="text" id="player-1" placeholder="enter name">
+		<br><br>
+      Player 2 <input type="text" id="player-2" placeholder="enter name">
+		<br><br>
       <button id="submit">Start Game</button>
     </div>
 
-    <!-- Game Section -->
-    <div id="game" class="hidden">
-      <h1>TIC TAC TOE</h1>
+    <!-- Game board section (hidden initially) -->
+    <div class="game" style="display: none;">
+      <h1>Tic Tac Toe</h1>
       <div class="message"></div>
-
-      <div id="board" class="board">
+      <div class="board">
         <div class="cell" id="1"></div>
         <div class="cell" id="2"></div>
         <div class="cell" id="3"></div>
