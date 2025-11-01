@@ -71,9 +71,9 @@ body {
   background-color: #ddd;
 }
  */
-  .winner {
-      background-color: purple !important;
-      color: black;
+.winner {
+    background-color: purple !important;
+    color: black;
 }
 .message {
   font-size: 1.2em;
