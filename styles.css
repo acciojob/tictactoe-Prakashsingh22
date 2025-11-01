@@ -90,7 +90,7 @@
     /* Winner cells highlighted purple with white text */
     .winner {
       background-color: purple !important;
-      color: white !important;
+      color:black !important;
     }
 
     .message {
