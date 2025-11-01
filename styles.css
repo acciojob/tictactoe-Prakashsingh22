@@ -57,7 +57,7 @@
       display: grid;
       grid-template-columns: repeat(3, 100px);
       grid-template-rows: repeat(3, 100px);
-      gap: 0;                 /* no grid gap */
+      gap: 1px;                 /* no grid gap */
       justify-content: center;
       margin-top: 20px;
       background: black;      /* black lines between cells */
