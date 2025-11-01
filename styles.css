@@ -1,82 +1,118 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+ body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-.container {
-  text-align: center;
-}
+    .container {
+      text-align: center;
+    }
 
-.input-Player {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
+    /* Correct class name: .player-inputs (matches HTML) */
+    .player-inputs {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: inline-block;
+    }
 
-.input-Player input {
-  margin: 10px;
-  padding: 10px;
-  width: 200px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
+    .player-inputs input {
+      margin: 10px;
+      padding: 10px;
+      width: 200px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
 
-#submit {
-  padding: 10px 20px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    #submit {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-#submit:hover {
-  background: #0056b3;
-}
+    #submit:hover {
+      background: #0056b3;
+    }
 
-.game {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
+    /* Game area */
+    .game {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: inline-block;
+    }
 
-.board {
-  display:grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap:1px;
-  justify-content: center;
-  margin-top: 20px;
+    /* Board: no gap, black gutters between cells */
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 0;                 /* no grid gap */
+      justify-content: center;
+      margin-top: 20px;
+      background: black;      /* black lines between cells */
+      padding: 1px;           /* small outer black border */
+    }
 
-}
+    /* Cells: pink background, black thin separators achieved by board background */
+    .cell {
+      background-color: pink;
+      font-size: 2.4em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-weight: bold;
+      user-select: none;
+      width: 100px;
+      height: 100px;
+      box-sizing: border-box;
+      /* remove internal borders so black "gutter" shows from board background */
+      border: 1px solid black;
+      margin: 0;
+    }
 
-.cell {
-  background-color: pink;
-  font-size: 2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border-radius: 1px solid black;
-  font-weight: bold;
-}
+    /* Optional hover */
+    /* .cell:hover {
+      background-color: #ffcce6;
+    } */
 
-/* .cell:hover {
-  background-color: #ddd;
-}
- */
-.winner {
-    background-color: purple !important;
-    color: black;
-}
-.message {
-  font-size: 1.2em;
-  margin-top: 10px;
-  font-weight: bold;
-}
+    /* Winner cells highlighted purple with white text */
+    .winner {
+      background-color: purple !important;
+      color: white !important;
+    }
+
+    .message {
+      font-size: 1.2em;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Play again button */
+    #reset {
+      margin-top: 12px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background: #6c757d;
+      color: white;
+    }
+    #reset:hover { background: #5a6167; }
+
+    /* Small-screen responsiveness */
+    @media (max-width: 420px) {
+      .board { grid-template-columns: repeat(3, 70px); grid-template-rows: repeat(3,70px); }
+      .cell { width:70px; height:70px; font-size:1.6em; }
+    }

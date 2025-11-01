@@ -6,20 +6,22 @@
   <title>Tic Tac Toe</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body><div class="container">
+<body>
+	<div class="container">
     <div class="player-inputs" id="input-section">
       <h1>Tic Tac Toe</h1>
-      Player 1 <input type="text" id="player-1" placeholder="enter name">
-		<br><br>
-      Player 2 <input type="text" id="player-2" placeholder="enter name">
-		<br><br>
+      Player 1 <input type="text" id="player-1" placeholder="enter name"><br><br>
+      Player 2 <input type="text" id="player-2" placeholder="enter name"><br><br>
       <button id="submit">Start Game</button>
     </div>
 
-    <div id="game-section" style="display: none;">
+    <div id="game-section" style="display:none;" class="game">
       <h1>Tic Tac Toe</h1>
       <div class="message"></div>
-      <div class="board" id="board"></div>
+      <div class="board" id="board" aria-label="tic tac toe board"></div>
+      <div>
+        <button id="reset" style="display:none;">Play Again</button>
+      </div>
     </div>
   </div>
 
