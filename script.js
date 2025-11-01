@@ -1,22 +1,21 @@
 const submitBtn = document.getElementById('submit');
-    const inputSection = document.getElementById('input-section');
-    const gameSection = document.getElementById('game-section');
-    const boardDiv = document.getElementById('board');
-    const messageDiv = document.querySelector('.message');
-    const resetBtn = document.getElementById('reset');
+const inputSection = document.getElementById('input-section');
+const gameSection = document.getElementById('game-section');
+const boardDiv = document.getElementById('board');
+const messageDiv = document.querySelector('.message');
+const resetBtn = document.getElementById('reset');
 
-    let player1 = '';
-    let player2 = '';
-    let currentPlayer = '';
-    let currentSymbol = 'X';
-    let gameActive = true;
-    let boardState = []; // will initialize per game
-
-    const winCombos = [
-      [0,1,2], [3,4,5], [6,7,8],
-      [0,3,6], [1,4,7], [2,5,8],
-      [0,4,8], [2,4,6]
-    ];
+let player1 = '';
+let player2 = '';
+let currentPlayer = '';
+let currentSymbol = 'X';
+let gameActive = true;
+let boardState = []; 
+const winCombos = [
+	[0,1,2], [3,4,5], [6,7,8],
+    [0,3,6], [1,4,7], [2,5,8],
+    [0,4,8], [2,4,6]
+];
 
     submitBtn.addEventListener('click', () => {
       player1 = document.getElementById('player-1').value.trim();
